@@ -1,0 +1,443 @@
+{
+  "arrow": {
+    "chunk_file": "arrow-right-C2UgZWMQ.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "CallToAction": {
+    "chunk_file": "CallToAction-Ca8bqmom.js",
+    "sample_content": [
+      "./arrow-right-C2UgZWMQ.js",
+      "./index-Cy_BWS3q.js",
+      "@emotion/is-prop-valid"
+    ]
+  },
+  "PythonTraining": {
+    "chunk_file": "PythonTraining-BmBlP_ZD.js",
+    "sample_content": [
+      "./brain-D0dFSOCQ.js",
+      "./code-CPl-tfNd.js",
+      "./cpu-CLEi_qoa.js",
+      "./database-N8hQ0NWV.js",
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./globe-CBjHMLhB.js",
+      "./server-BppD6N6a.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "globe": {
+    "chunk_file": "globe-CBjHMLhB.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "shield": {
+    "chunk_file": "shield-BtcYcpEm.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "brain": {
+    "chunk_file": "brain-D0dFSOCQ.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "ProcessSteps": {
+    "chunk_file": "ProcessSteps-IM1QSvVP.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js",
+      "./CallToAction-Ca8bqmom.js"
+    ]
+  },
+  "monitor": {
+    "chunk_file": "monitor-C5KVImFr.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "book": {
+    "chunk_file": "book-open-C0b-u9LH.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "SEO": {
+    "chunk_file": "SEO-TIdsfBVy.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "CybersecurityTraining": {
+    "chunk_file": "CybersecurityTraining-CCdoJn0a.js",
+    "sample_content": [
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./globe-CBjHMLhB.js",
+      "./server-BppD6N6a.js",
+      "./shield-BtcYcpEm.js",
+      "./terminal-DybPZnQm.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "chart": {
+    "chunk_file": "chart-line-CC4mKKNX.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "server": {
+    "chunk_file": "server-BppD6N6a.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "graduation": {
+    "chunk_file": "graduation-cap-DEjACBj9.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "network": {
+    "chunk_file": "network-CAyeQfk4.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "code": {
+    "chunk_file": "code-CPl-tfNd.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "Blog": {
+    "chunk_file": "Blog-Du_sNO4S.js",
+    "sample_content": [
+      "./arrow-right-C2UgZWMQ.js",
+      "./book-open-C0b-u9LH.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js"
+    ]
+  },
+  "external": {
+    "chunk_file": "external-link-DHAUeiMi.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "languages": {
+    "chunk_file": "languages-CKEpL2oa.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "WebsiteDevelopment": {
+    "chunk_file": "WebsiteDevelopment-Dy7g2S6i.js",
+    "sample_content": [
+      "./FAQ-CfIOuf05.js",
+      "./code-CPl-tfNd.js",
+      "./search-CkCtvXMr.js",
+      "./server-BppD6N6a.js",
+      "./shield-BtcYcpEm.js",
+      "./smartphone-BGIa4Q5_.js",
+      "./zap-BKJlcF2H.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      "./BenefitsGrid-B6KHRW5U.js"
+    ]
+  },
+  "terminal": {
+    "chunk_file": "terminal-DybPZnQm.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "StudentProjects": {
+    "chunk_file": "StudentProjects-DSBfqfXe.js",
+    "sample_content": [
+      "./graduation-cap-DEjACBj9.js",
+      "./book-open-C0b-u9LH.js",
+      "./FAQ-CfIOuf05.js",
+      "./users-7-3QLa7T.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      "./BenefitsGrid-B6KHRW5U.js"
+    ]
+  },
+  "DataScienceTraining": {
+    "chunk_file": "DataScienceTraining-D1FFroA3.js",
+    "sample_content": [
+      "./brain-D0dFSOCQ.js",
+      "./chart-line-CC4mKKNX.js",
+      "./code-CPl-tfNd.js",
+      "./database-N8hQ0NWV.js",
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "cpu": {
+    "chunk_file": "cpu-CLEi_qoa.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "chevron": {
+    "chunk_file": "chevron-right-TL92GiUi.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "CloudComputingTraining": {
+    "chunk_file": "CloudComputingTraining-CCogbr-j.js",
+    "sample_content": [
+      "./code-CPl-tfNd.js",
+      "./database-N8hQ0NWV.js",
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./monitor-C5KVImFr.js",
+      "./server-BppD6N6a.js",
+      "./smartphone-BGIa4Q5_.js",
+      "./zap-BKJlcF2H.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "Portfolio": {
+    "chunk_file": "Portfolio-rWY8tyJN.js",
+    "sample_content": [
+      "./external-link-DHAUeiMi.js",
+      "./globe-CBjHMLhB.js",
+      "./monitor-C5KVImFr.js",
+      "./server-BppD6N6a.js",
+      "./smartphone-BGIa4Q5_.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js"
+    ]
+  },
+  "Article": {
+    "chunk_file": "Article-CqvRaKgq.js",
+    "sample_content": [
+      "./chevron-right-TL92GiUi.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./Blog-Du_sNO4S.js",
+      "How much does it actually cost to build a website in India?",
+      "Learn React, Learn Node",
+      "s a red flag. It should say, "
+    ]
+  },
+  "BrochureDownload": {
+    "chunk_file": "BrochureDownload-Dw4OLVN7.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "InquiryForm": {
+    "chunk_file": "InquiryForm-QCWVKLUf.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js",
+      "re here to help. Send us a message and we"
+    ]
+  },
+  "zap": {
+    "chunk_file": "zap-BKJlcF2H.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "FAQ": {
+    "chunk_file": "FAQ-CfIOuf05.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "Contact": {
+    "chunk_file": "Contact-DuFh3OiI.js",
+    "sample_content": [
+      "./InquiryForm-QCWVKLUf.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js"
+    ]
+  },
+  "AiTraining": {
+    "chunk_file": "AiTraining-4BUvsypT.js",
+    "sample_content": [
+      "./brain-D0dFSOCQ.js",
+      "./chart-line-CC4mKKNX.js",
+      "./cpu-CLEi_qoa.js",
+      "./database-N8hQ0NWV.js",
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./network-CAyeQfk4.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "JapaneseCourse": {
+    "chunk_file": "JapaneseCourse-Bfq_Fzi4.js",
+    "sample_content": [
+      "./graduation-cap-DEjACBj9.js",
+      "./book-open-C0b-u9LH.js",
+      "./FAQ-CfIOuf05.js",
+      "./messages-square-oDLOOm7K.js",
+      "./languages-CKEpL2oa.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      "./BenefitsGrid-B6KHRW5U.js"
+    ]
+  },
+  "smartphone": {
+    "chunk_file": "smartphone-BGIa4Q5_.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "Home": {
+    "chunk_file": "Home-i-Cc6tga.js",
+    "sample_content": [
+      "./arrow-right-C2UgZWMQ.js",
+      "./graduation-cap-DEjACBj9.js",
+      "./FAQ-CfIOuf05.js",
+      "./panels-top-left-BTvRrH77.js",
+      "./code-CPl-tfNd.js",
+      "./cpu-CLEi_qoa.js",
+      "./external-link-DHAUeiMi.js",
+      "./globe-CBjHMLhB.js",
+      "./languages-CKEpL2oa.js",
+      "./InquiryForm-QCWVKLUf.js",
+      "./server-BppD6N6a.js",
+      "./shield-BtcYcpEm.js",
+      "./smartphone-BGIa4Q5_.js",
+      "./terminal-DybPZnQm.js",
+      "./users-7-3QLa7T.js",
+      "./zap-BKJlcF2H.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "ve expanded our horizons. We don",
+      ":`https://schema.org`,",
+      ":`LocalBusiness`,name:`JM Vertex Technologies`,image:`https://jmvertextechnologies.com/JM_Logo.png`,"
+    ]
+  },
+  "panels": {
+    "chunk_file": "panels-top-left-BTvRrH77.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "messages": {
+    "chunk_file": "messages-square-oDLOOm7K.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "users": {
+    "chunk_file": "users-7-3QLa7T.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "ProjectCategories": {
+    "chunk_file": "ProjectCategories-tkNRZ6pv.js",
+    "sample_content": [
+      "./book-open-C0b-u9LH.js",
+      "./chevron-right-TL92GiUi.js",
+      "./search-CkCtvXMr.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js"
+    ]
+  },
+  "FullStackTraining": {
+    "chunk_file": "FullStackTraining-Cdv0vwyO.js",
+    "sample_content": [
+      "./code-CPl-tfNd.js",
+      "./database-N8hQ0NWV.js",
+      "./BrochureDownload-Dw4OLVN7.js",
+      "./monitor-C5KVImFr.js",
+      "./server-BppD6N6a.js",
+      "./smartphone-BGIa4Q5_.js",
+      "./zap-BKJlcF2H.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      ":`https://schema.org`,"
+    ]
+  },
+  "GermanCourse": {
+    "chunk_file": "GermanCourse-BxKjTn7l.js",
+    "sample_content": [
+      "./graduation-cap-DEjACBj9.js",
+      "./book-open-C0b-u9LH.js",
+      "./FAQ-CfIOuf05.js",
+      "./messages-square-oDLOOm7K.js",
+      "./languages-CKEpL2oa.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      "./BenefitsGrid-B6KHRW5U.js"
+    ]
+  },
+  "InternshipTraining": {
+    "chunk_file": "InternshipTraining-WhunAKGT.js",
+    "sample_content": [
+      "./FAQ-CfIOuf05.js",
+      "./panels-top-left-BTvRrH77.js",
+      "./cpu-CLEi_qoa.js",
+      "./database-N8hQ0NWV.js",
+      "./network-CAyeQfk4.js",
+      "./terminal-DybPZnQm.js",
+      "./index-Cy_BWS3q.js",
+      "./SEO-TIdsfBVy.js",
+      "./CallToAction-Ca8bqmom.js",
+      "./ProcessSteps-IM1QSvVP.js",
+      "./BenefitsGrid-B6KHRW5U.js"
+    ]
+  },
+  "BenefitsGrid": {
+    "chunk_file": "BenefitsGrid-B6KHRW5U.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js",
+      "./CallToAction-Ca8bqmom.js"
+    ]
+  },
+  "database": {
+    "chunk_file": "database-N8hQ0NWV.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  },
+  "search": {
+    "chunk_file": "search-CkCtvXMr.js",
+    "sample_content": [
+      "./index-Cy_BWS3q.js"
+    ]
+  }
+}

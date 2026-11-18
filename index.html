@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JM Vertex Technologies — Creative Engineering Studio &amp; Tech Academy</title>
+  <meta name="description" content="JM Vertex Technologies architects high-conversion web platforms, IEEE standard final year engineering projects, intensive tech internships, and certified German &amp; Japanese language coaching.">
+  <link rel="canonical" href="https://jmvertextechnologies.com/">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Fonts Preload & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Engineering Studio Stylesheet (Zero Glassmorphism) -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- Precision Architectural Progress Bar -->
+  <div id="top-progress-bar" style="position:fixed; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg, #00ff88, #00f0ff); z-index:999999; transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease, opacity 0.3s ease;"></div>
+
+  <!-- Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas"></canvas>
+
+  <!-- Project Hover Preview -->
+  <div class="project-hover-preview" id="project-hover-preview" style="position:fixed; pointer-events:none; width:340px; height:220px; border-radius:12px; overflow:hidden; z-index:9999; opacity:0; transform:translate(-50%, -50%) scale(0.9); transition:opacity 0.25s ease, transform 0.25s ease; border:1px solid rgba(0,255,136,0.4); box-shadow:0 20px 50px rgba(0,0,0,0.8);">
+    <img id="project-hover-img" src="assets/images/logo.png" alt="Project Preview" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <!-- Studio Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="studio-brand">
+        <div class="brand-glyph">
+          <img src="assets/images/logo.png" alt="JM Vertex">
+        </div>
+        <div class="brand-label">
+          <span class="brand-logo-text">JM VERTEX</span>
+          <div class="brand-status-dot">
+            <span class="live-dot"></span> STUDIO • LABS • 2026
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop-container">
+        <ul class="nav-links-wrap">
+          <li><a href="index.html" class="nav-link active">Index</a></li>
+          <li><a href="website-development.html" class="nav-link ">Web Studio</a></li>
+          <li><a href="student-projects.html" class="nav-link ">Academic Projects</a></li>
+          <li><a href="internship-training.html" class="nav-link ">Engineering Tracks</a></li>
+          <li><a href="german-language-course.html" class="nav-link ">Languages</a></li>
+          <li><a href="portfolio.html" class="nav-link ">Works</a></li>
+          <li><a href="blog.html" class="nav-link ">Publications</a></li>
+          <li><a href="contact.html" class="nav-link ">Connect</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Side Actions & Contact -->
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <a href="tel:+919092737477" class="tag-mono" style="text-decoration:none; display:none; @media (min-width: 1200px) { display: inline-flex; }">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +91 90927 37477
+        </a>
+
+        <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex%20Technologies,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Quick Chat
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle Mobile Menu" onclick="toggleMobileMenu()">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <a href="index.html" class="studio-brand" style="margin-bottom: 1.5rem;">
+        <div class="brand-glyph"><img src="assets/images/logo.png" alt="JM Vertex"></div>
+        <span class="brand-logo-text">JM VERTEX</span>
+      </a>
+      <a href="index.html" class="mobile-link" style="color:#fff; text-decoration:none; font-family:var(--font-display); font-size:1.4rem; font-weight:800;">INDEX</a>
+      <a href="website-development.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[01] WEB STUDIO</a>
+      <a href="student-projects.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[02] ACADEMIC PROJECTS (IEEE)</a>
+      <a href="internship-training.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[03] TECH TRAINING TRACKS</a>
+      <a href="german-language-course.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[04] GERMAN (A1 - B2)</a>
+      <a href="japanese-language-course.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[05] JAPANESE (JLPT N5-N1)</a>
+      <a href="portfolio.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[06] PRODUCTION WORKS</a>
+      <a href="blog.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[07] 20 PUBLICATIONS</a>
+      <a href="contact.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[08] CONNECT</a>
+
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+        <p style="color:#64748b; font-size:0.8rem; font-family:var(--font-mono); margin-bottom: 0.75rem;">DIRECT FOUNDER CONNECT:</p>
+        <a href="tel:+919092737477" class="studio-btn studio-btn-neon" style="width:100%; margin-bottom:0.5rem; font-size:0.75rem;">+91 90927 37477</a>
+        <a href="https://wa.me/919092737477" class="studio-btn studio-btn-whatsapp" style="width:100%; font-size:0.75rem;">WhatsApp Direct</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-content">
+
+    <!-- Master Engineering Studio Hero -->
+    <section class="section-block" style="padding-top: clamp(3.5rem, 6vw, 6rem); padding-bottom: clamp(2.5rem, 4vw, 4rem);">
+      <div class="container">
+        <!-- Top Monospace Metadata Tag -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+          <span class="eyebrow"><span class="dot"></span> EST. 2025 // COIMBATORE, TAMIL NADU</span>
+          <span style="color: var(--rule-strong);">•</span>
+          <span class="tag-mono tag-emerald">WEB STUDIO &amp; ACADEMIC LABS</span>
+          <span class="tag-mono tag-cyan">IEEE ACCREDITED</span>
+        </div>
+
+        <!-- Monumental Hero Display Headline -->
+        <div style="margin-bottom: 2.5rem; max-width: 1100px;">
+          <h1 class="hero-display-title">
+            ENGINEERING <br>
+            <span style="color: var(--emerald);">THE NEXT</span> HORIZON.
+          </h1>
+        </div>
+
+        <!-- Asymmetric Editorial Lead & Action Grid -->
+        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 2.5rem; align-items: flex-end; margin-bottom: 3.5rem;">
+          <div style="grid-column: span 7;">
+            <p class="section-lead">
+              We merge bespoke software craftsmanship, academic research rigor, and foreign language mastery. Architectural web applications engineered for scaling businesses, distinction-grade IEEE final year projects, and certified global engineering pathways.
+            </p>
+          </div>
+          <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start;">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="website-development.html" class="btn btn-primary" data-cursor-text="EXPLORE">
+                Explore Web Studio <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="student-projects.html" class="btn btn-ghost" data-cursor-text="PROJECTS">
+                Student Projects (IEEE)
+              </a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-mute);">
+              <span>DIRECT FOUNDER DESK:</span>
+              <a href="tel:+919092737477" style="color: var(--emerald); font-weight: 700; text-decoration: none;">+91 90927 37477</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Metrics Grid (Exact Official Stats matching client records) -->
+        <div class="stat-cards-grid">
+          <div class="stat-card-box">
+            <span class="stat-card-value">100+</span>
+            <span class="stat-card-label">Students Trained</span>
+          </div>
+          <div class="stat-card-box">
+            <span class="stat-card-value">20+</span>
+            <span class="stat-card-label">Projects Delivered</span>
+          </div>
+          <div class="stat-card-box">
+            <span class="stat-card-value">30+</span>
+            <span class="stat-card-label">Websites Built</span>
+          </div>
+          <div class="stat-card-box">
+            <span class="stat-card-value">15+</span>
+            <span class="stat-card-label">Schools &amp; Colleges</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Continuous Horizontal Marquee Ribbon -->
+    <div class="marquee-ribbon-wrap">
+      <div class="marquee-content">
+        <div class="marquee-item"><span>REACT 19 &amp; VITE APPS</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>IEEE RESEARCH IMPLEMENTATION</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>FULL STACK MERN &amp; PYTHON</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>AWS &amp; DOCKER DEVOPS</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>AI &amp; NEURAL NETWORKS</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>GERMAN GOETHE A1-B2</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>JAPANESE JLPT N5-N1</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>WHATSAPP ORDERING CRM</span> <div class="marquee-dot"></div></div>
+        <!-- Infinite loop repetition -->
+        <div class="marquee-item"><span>REACT 19 &amp; VITE APPS</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>IEEE RESEARCH IMPLEMENTATION</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>FULL STACK MERN &amp; PYTHON</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>AWS &amp; DOCKER DEVOPS</span> <div class="marquee-dot"></div></div>
+        <div class="marquee-item"><span>AI &amp; NEURAL NETWORKS</span> <div class="marquee-dot"></div></div>
+      </div>
+    </div>
+
+    <!-- [01] The 4 Core Disciplines — Solid Architecture -->
+    <section class="section-block">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 2rem;">
+          <div>
+            <span class="eyebrow"><span class="dot"></span> [01] // BESPOKE CAPABILITIES</span>
+            <h2 class="section-display-title" style="margin-top: 0.75rem;">
+              WHAT WE <span style="color: var(--emerald);">ENGINEER.</span>
+            </h2>
+          </div>
+          <p style="color: var(--paper-mute); max-width: 440px; font-size: 0.95rem; line-height: 1.6;">
+            Every discipline is built with production depth — zero generic templates or superficial theory.
+          </p>
+        </div>
+
+        <!-- 4 Disciplines Rows -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Discipline 1: Web Development -->
+          <div class="discipline-row">
+            <span class="discipline-num">01</span>
+            <div>
+              <span class="tag-mono" style="margin-bottom: 0.5rem; font-size: 0.7rem;">DIGITAL PRODUCTION</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">Website &amp; Web App Development</h3>
+              <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+                Custom React &amp; Vite single-page applications engineered for small businesses, restaurants, and startups. 90+ PageSpeed guarantee with integrated technical SEO and direct WhatsApp ordering CRM.
+              </p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag-mono tag-emerald">REACT / VITE</span>
+              <span class="tag-mono">SUB-SECOND SPEED</span>
+              <span class="tag-mono">WHATSAPP COMMERCE</span>
+            </div>
+            <div>
+              <a href="website-development.html" class="btn btn-ghost btn-sm">
+                Explore Studio <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Discipline 2: Custom Student Projects -->
+          <div class="discipline-row">
+            <span class="discipline-num">02</span>
+            <div>
+              <span class="tag-mono" style="margin-bottom: 0.5rem; font-size: 0.7rem;">ACADEMIC RESEARCH LABS</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">Custom Projects for College Students (IEEE)</h3>
+              <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+                End-to-end guidance for B.E., B.Tech, MCA, and MSc engineering students. Implement authentic IEEE base papers with clean production code, architecture flowcharts, comprehensive reports, and 1-on-1 viva defense training.
+              </p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag-mono tag-cyan">IEEE BASE PAPERS</span>
+              <span class="tag-mono">LIVE VIVA PREP</span>
+              <span class="tag-mono">COMPLETE DOCUMENTATION</span>
+            </div>
+            <div>
+              <a href="student-projects.html" class="btn btn-ghost btn-sm">
+                View Project Catalog <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Discipline 3: Tech Training & Internships -->
+          <div class="discipline-row">
+            <span class="discipline-num">03</span>
+            <div>
+              <span class="tag-mono" style="margin-bottom: 0.5rem; font-size: 0.7rem;">ENGINEERING ACADEMY</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">Tech Training &amp; Intensive Internships</h3>
+              <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+                Intensive cohorts across 6 specialized tracks: Python Full Stack, MERN Stack, Cloud Computing &amp; DevOps, AI/ML, Cybersecurity, and Data Science. Hands-on labs with verified credentials and live production projects.
+              </p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag-mono tag-emerald">6 SPECIALIZED TRACKS</span>
+              <span class="tag-mono">HANDS-ON LABS</span>
+              <span class="tag-mono">VERIFIED CREDENTIALS</span>
+            </div>
+            <div>
+              <a href="internship-training.html" class="btn btn-ghost btn-sm">
+                View Curricula <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Discipline 4: Foreign Language Academy -->
+          <div class="discipline-row">
+            <span class="discipline-num">04</span>
+            <div>
+              <span class="tag-mono" style="margin-bottom: 0.5rem; font-size: 0.7rem;">GLOBAL MOBILITY</span>
+              <h3 class="card-title" style="margin-bottom: 0.5rem;">Foreign Language Coaching (German &amp; Japanese)</h3>
+              <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+                Access tuition-free master's education in Germany and high-demand developer careers in Tokyo. Certified training for German (Goethe A1-B2) and Japanese (JLPT N5-N1) with interactive speaking sessions and exam mock drill tests.
+              </p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag-mono tag-cyan">GERMAN GOETHE A1-B2</span>
+              <span class="tag-mono">JAPANESE JLPT N5-N1</span>
+              <span class="tag-mono">GERMAN UNIVERSITY SOPS</span>
+            </div>
+            <div>
+              <a href="german-language-course.html" class="btn btn-ghost btn-sm">
+                Language Tracks <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [02] Selected Production Works Showcase — World-Class Branding Methodology -->
+    <section class="section-block" style="background: #08090d; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="eyebrow"><span class="dot"></span> [02] // VERIFIED PRODUCTION SHOWCASE</span>
+            <h2 class="section-display-title" style="margin-top: 0.75rem;">
+              FEATURED <span style="color: var(--emerald);">WORKS.</span>
+            </h2>
+          </div>
+          <a href="portfolio.html" class="btn btn-ghost">
+            View All Completed Works <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <!-- 4 Prominent Browser Preview Cards with Live Links -->
+        <div class="bento-grid-2" style="gap: 2rem;">
+
+          <!-- Work 1: Pizza Crave (Live Commercial Client!) -->
+          <div class="work-browser-card">
+            <div class="work-browser-header">
+              <div class="work-browser-dots">
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+              </div>
+              <span class="work-browser-url">https://pizzacrave.in</span>
+            </div>
+            <div class="work-preview-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800" alt="Pizza Crave Restaurant Ordering Platform">
+              <span class="work-badge-live">
+                <span class="live-dot"></span> LIVE IN PRODUCTION
+              </span>
+            </div>
+            <div class="work-content-body">
+              <div class="work-metric-chip">
+                ⚡ +40% DIRECT SALES • 98 PAGESPEED SCORE
+              </div>
+              <h3 class="card-title" style="margin-bottom: 0.5rem; font-size: 1.4rem;">Pizza Crave — Restaurant Commerce &amp; WhatsApp Engine</h3>
+              <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Engineered a custom, high-speed digital storefront for Pizza Crave restaurant with instantaneous WhatsApp order dispatch, interactive cart customization, and sub-second load times.
+              </p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+                <span class="tag-mono tag-emerald">REACT 19</span>
+                <span class="tag-mono">VITE</span>
+                <span class="tag-mono">WHATSAPP COMMERCE</span>
+                <span class="tag-mono">SEO READY</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                <a href="https://pizzacrave.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1;">
+                  Visit Live Site <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex,%20I%20am%20interested%20in%20a%20website%20like%20Pizza%20Crave." target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  Inquire Similar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 2: SecureShield AI (AI & Cybersecurity) -->
+          <div class="work-browser-card">
+            <div class="work-browser-header">
+              <div class="work-browser-dots">
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+              </div>
+              <span class="work-browser-url">https://secureshield.ai-platform.io</span>
+            </div>
+            <div class="work-preview-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="SecureShield AI Diagnostic Platform">
+              <span class="work-badge-live" style="color: var(--cyan); border-color: rgba(0, 240, 255, 0.4);">
+                <span class="live-dot" style="background: var(--cyan); box-shadow: 0 0 6px var(--cyan);"></span> IEEE RESEARCH GRADE
+              </span>
+            </div>
+            <div class="work-content-body">
+              <div class="work-metric-chip" style="color: var(--cyan); border-color: rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.08);">
+                ⚡ 96.4% ACCURACY • REAL-TIME INFERENCE
+              </div>
+              <h3 class="card-title" style="margin-bottom: 0.5rem; font-size: 1.4rem;">SecureShield AI — Healthcare Diagnostic &amp; Threat Telemetry</h3>
+              <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Deep learning neural network architecture designed for medical anomaly screening and corporate cybersecurity threat prediction. Built as an end-to-end IEEE demonstration suite.
+              </p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+                <span class="tag-mono tag-cyan">PYTHON</span>
+                <span class="tag-mono">TENSORFLOW</span>
+                <span class="tag-mono">FASTAPI</span>
+                <span class="tag-mono">REACT</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                <a href="portfolio.html" class="btn btn-primary btn-sm" style="flex: 1;">
+                  View Case Study <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="student-projects.html" class="btn btn-ghost btn-sm">
+                  IEEE Papers
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 3: NextGen E-Commerce Suite -->
+          <div class="work-browser-card">
+            <div class="work-browser-header">
+              <div class="work-browser-dots">
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+              </div>
+              <span class="work-browser-url">https://ecommerce.jmvertextechnologies.com</span>
+            </div>
+            <div class="work-preview-img-wrap">
+              <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800" alt="E-Commerce & Digital Storefront">
+              <span class="work-badge-live">
+                <span class="live-dot"></span> FULL STACK DEPLOYED
+              </span>
+            </div>
+            <div class="work-content-body">
+              <div class="work-metric-chip">
+                ⚡ STRIPE READY • 10K+ SKU INVENTORY SYNC
+              </div>
+              <h3 class="card-title" style="margin-bottom: 0.5rem; font-size: 1.4rem;">NextGen Commerce — Digital Storefront &amp; Automation Hub</h3>
+              <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Full-stack commerce engine with custom checkout funnel, multi-currency processing, dynamic variant filtering, and administrative inventory analytics.
+              </p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+                <span class="tag-mono tag-emerald">MERN STACK</span>
+                <span class="tag-mono">STRIPE</span>
+                <span class="tag-mono">REDUX</span>
+                <span class="tag-mono">TAILWIND</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                <a href="portfolio.html" class="btn btn-primary btn-sm" style="flex: 1;">
+                  View Live Demo <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex,%20I%20want%20to%20build%20an%20e-commerce%20website." target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  Quote Project
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 4: AgriSense IoT Precision Agriculture -->
+          <div class="work-browser-card">
+            <div class="work-browser-header">
+              <div class="work-browser-dots">
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+                <span class="work-browser-dot"></span>
+              </div>
+              <span class="work-browser-url">https://agrisense.iot-telemetry.in</span>
+            </div>
+            <div class="work-preview-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=800" alt="AgriSense IoT Precision Agriculture">
+              <span class="work-badge-live" style="color: var(--cyan); border-color: rgba(0, 240, 255, 0.4);">
+                <span class="live-dot" style="background: var(--cyan); box-shadow: 0 0 6px var(--cyan);"></span> IEEE JOURNAL PUBLISHED
+              </span>
+            </div>
+            <div class="work-content-body">
+              <div class="work-metric-chip" style="color: var(--cyan); border-color: rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.08);">
+                ⚡ 40% WATER CONSERVATION • REAL-TIME MQTT
+              </div>
+              <h3 class="card-title" style="margin-bottom: 0.5rem; font-size: 1.4rem;">AgriSense IoT — Smart Agriculture Environmental Telemetry</h3>
+              <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Precision crop telemetry system measuring soil NPK levels, moisture, and ambient weather with automated solar-powered irrigation valves and AWS IoT data pipelines.
+              </p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+                <span class="tag-mono tag-cyan">IOT SENSORS</span>
+                <span class="tag-mono">MQTT</span>
+                <span class="tag-mono">PYTHON</span>
+                <span class="tag-mono">AWS CLOUD</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; margin-top: auto;">
+                <a href="student-projects.html" class="btn btn-primary btn-sm" style="flex: 1;">
+                  Explore IEEE Projects <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex,%20I%20am%20interested%20in%20an%20IoT%20academic%20project." target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  Request Base Paper
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- [03] Student Hall of Fame — Verified Success -->
+    <section class="section-block">
+      <div class="container">
+        <div style="margin-bottom: 3.5rem;">
+          <span class="eyebrow"><span class="dot"></span> [03] // VERIFIED ALUMNI SUCCESS</span>
+          <h2 class="section-display-title" style="margin-top: 0.75rem;">
+            STUDENT <span style="color: var(--emerald);">HALL OF FAME.</span>
+          </h2>
+          <p style="color: var(--paper-mute); max-width: 600px; margin-top: 0.75rem; font-size: 0.95rem;">
+            Real students from premier engineering colleges who built their final year projects, published IEEE papers, and secured corporate placements with JM Vertex.
+          </p>
+        </div>
+
+        <div class="bento-grid-3">
+          <!-- Student 1: Suriya -->
+          <div class="studio-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+              <div style="width: 48px; height: 48px; background: var(--bg-elevated); border: 1px solid var(--rule-strong); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-family: var(--font-display);">S</div>
+              <span class="tag-mono tag-emerald">7.5 LPA TIER</span>
+            </div>
+            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 0.25rem;">Suriya</h3>
+            <p style="font-family: var(--font-mono); font-size: 0.785rem; color: var(--paper-mute); margin-bottom: 1.25rem;">Karpagam College of Engineering</p>
+            
+            <div style="background: var(--bg-deep); border-left: 2px solid var(--emerald); padding: 0.85rem 1rem; border-radius: 4px; margin-bottom: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--emerald); text-transform: uppercase; display: block; margin-bottom: 2px;">PLACED AT:</span>
+              <strong style="color: #fff; font-size: 1rem;">TCS Digital — 7.5 LPA</strong>
+            </div>
+
+            <p style="font-size: 0.875rem; color: var(--paper-soft); margin-bottom: 1.25rem;">
+              <strong style="color: #fff;">Project:</strong> AI-Powered Resume Screener
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <span class="tag-mono">PYTHON</span>
+              <span class="tag-mono">NLP</span>
+              <span class="tag-mono">REACT</span>
+            </div>
+          </div>
+
+          <!-- Student 2: Vishal -->
+          <div class="studio-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+              <div style="width: 48px; height: 48px; background: var(--bg-elevated); border: 1px solid var(--rule-strong); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--cyan); font-family: var(--font-display);">V</div>
+              <span class="tag-mono tag-cyan">BEST PROJECT AWARD</span>
+            </div>
+            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 0.25rem;">Vishal</h3>
+            <p style="font-family: var(--font-mono); font-size: 0.785rem; color: var(--paper-mute); margin-bottom: 1.25rem;">Thiagarajar Engineering College</p>
+            
+            <div style="background: var(--bg-deep); border-left: 2px solid var(--cyan); padding: 0.85rem 1rem; border-radius: 4px; margin-bottom: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan); text-transform: uppercase; display: block; margin-bottom: 2px;">HONOR:</span>
+              <strong style="color: #fff; font-size: 1rem;">Best Final Year Project Award 2023</strong>
+            </div>
+
+            <p style="font-size: 0.875rem; color: var(--paper-soft); margin-bottom: 1.25rem;">
+              <strong style="color: #fff;">Project:</strong> E-Commerce Analytics Dashboard
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <span class="tag-mono">REACT</span>
+              <span class="tag-mono">NODE.JS</span>
+              <span class="tag-mono">MONGODB</span>
+            </div>
+          </div>
+
+          <!-- Student 3: Harsha -->
+          <div class="studio-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+              <div style="width: 48px; height: 48px; background: var(--bg-elevated); border: 1px solid var(--rule-strong); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #a78bfa; font-family: var(--font-display);">H</div>
+              <span class="tag-mono tag-emerald">IEEE JOURNAL</span>
+            </div>
+            <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 0.25rem;">Harsha</h3>
+            <p style="font-family: var(--font-mono); font-size: 0.785rem; color: var(--paper-mute); margin-bottom: 1.25rem;">Sri Eshwar College Of Engineering</p>
+            
+            <div style="background: var(--bg-deep); border-left: 2px solid #a78bfa; padding: 0.85rem 1rem; border-radius: 4px; margin-bottom: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #a78bfa; text-transform: uppercase; display: block; margin-bottom: 2px;">RESEARCH OUTCOME:</span>
+              <strong style="color: #fff; font-size: 1rem;">Published in Peer-Reviewed IEEE</strong>
+            </div>
+
+            <p style="font-size: 0.875rem; color: var(--paper-soft); margin-bottom: 1.25rem;">
+              <strong style="color: #fff;">Project:</strong> Smart Agriculture IoT System
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <span class="tag-mono">IOT</span>
+              <span class="tag-mono">PYTHON</span>
+              <span class="tag-mono">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [04] Testimonials — Verified Feedback -->
+    <section class="section-block" style="background: #08090d; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <div class="container">
+        <div style="margin-bottom: 3.5rem;">
+          <span class="eyebrow"><span class="dot"></span> [04] // CLIENT &amp; STUDENT VOICES</span>
+          <h2 class="section-display-title" style="margin-top: 0.75rem;">
+            AUTHENTIC <span style="color: var(--emerald);">FEEDBACK.</span>
+          </h2>
+        </div>
+
+        <div class="bento-grid-3" style="margin-bottom: 3rem;">
+          <div class="studio-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: #fbbf24; font-size: 1.1rem; margin-bottom: 1rem;">★★★★★</div>
+              <p style="color: var(--paper-soft); font-size: 0.95rem; line-height: 1.7;">
+                "The web development internship at JM Vertex completely changed my career trajectory. The mentors are incredibly supportive and the hands-on projects gave me the confidence to ace my technical interviews."
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 1.5rem;">
+              <strong style="color: #fff; font-size: 0.95rem; display: block;">Rohan Sharma</strong>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-mute);">Sri Krishna College of Engineering</span>
+            </div>
+          </div>
+
+          <div class="studio-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: #fbbf24; font-size: 1.1rem; margin-bottom: 1rem;">★★★★★</div>
+              <p style="color: var(--paper-soft); font-size: 0.95rem; line-height: 1.7;">
+                "JM Vertex built our restaurant website (pizzacrave.in) faster than we expected. The design is modern, and the WhatsApp ordering integration has significantly boosted our direct sales."
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 1.5rem;">
+              <strong style="color: #fff; font-size: 0.95rem; display: block;">Pizza Crave Team</strong>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-mute);">pizzacrave.in • Commercial Client</span>
+            </div>
+          </div>
+
+          <div class="studio-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="color: #fbbf24; font-size: 1.1rem; margin-bottom: 1rem;">★★★★★</div>
+              <p style="color: var(--paper-soft); font-size: 0.95rem; line-height: 1.7;">
+                "Learning German felt intimidating at first, but the structured approach and interactive sessions made it so easy. I cleared my Goethe A1 certification on the very first attempt!"
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 1.5rem;">
+              <strong style="color: #fff; font-size: 0.95rem; display: block;">Sneha Patel</strong>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-mute);">PSG College of Technology</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="btn btn-ghost" onclick="openModal('review-modal')">
+            ★ Submit Your Verified Review
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- [05] Leadership Desk — Founders Joshua J & Madhav Adithya S -->
+    <section class="section-block">
+      <div class="container">
+        <div style="margin-bottom: 3.5rem; text-align: center;">
+          <span class="eyebrow"><span class="dot"></span> [05] // EXECUTIVE LEADERSHIP</span>
+          <h2 class="section-display-title" style="margin-top: 0.75rem;">
+            MEET THE <span style="color: var(--emerald);">FOUNDERS.</span>
+          </h2>
+          <p style="color: var(--paper-mute); max-width: 540px; margin: 0.75rem auto 0; font-size: 0.95rem;">
+            Direct access to decision-makers. No account managers or middle tiers.
+          </p>
+        </div>
+
+        <div class="bento-grid-2" style="max-width: 940px; margin: 0 auto;">
+          <!-- Joshua J -->
+          <div class="studio-card" style="text-align: center; padding: 3rem 2rem;">
+            <div style="width: 72px; height: 72px; background: var(--bg-elevated); border: 2px solid var(--emerald); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display); margin: 0 auto 1.5rem;">JJ</div>
+            <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.25rem;">Joshua J</h3>
+            <span class="tag-mono tag-emerald" style="margin-bottom: 1.25rem;">FOUNDER &amp; TECHNICAL DIRECTOR</span>
+            <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;">
+              Directing core system architecture, React &amp; Vite full-stack production pipelines, and IEEE student research mentorship across AI and distributed networks.
+            </p>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+              <a href="tel:+919092737477" class="btn btn-ghost btn-sm">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +91 90927 37477
+              </a>
+              <a href="https://wa.me/919092737477" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Madhav Adithya S -->
+          <div class="studio-card" style="text-align: center; padding: 3rem 2rem;">
+            <div style="width: 72px; height: 72px; background: var(--bg-elevated); border: 2px solid var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #fff; font-family: var(--font-display); margin: 0 auto 1.5rem;">MA</div>
+            <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.25rem;">Madhav Adithya S</h3>
+            <span class="tag-mono tag-cyan" style="margin-bottom: 1.25rem;">CO-FOUNDER &amp; OPERATIONS</span>
+            <p style="color: var(--paper-soft); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;">
+              Directing academic partnerships, German &amp; Japanese global language training cohorts, client operations, and European university admission pathways.
+            </p>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+              <a href="tel:+919345699376" class="btn btn-ghost btn-sm">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +91 93456 99376
+              </a>
+              <a href="https://wa.me/919345699376" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [06] FAQs Registry -->
+    <section class="section-block" style="background: #08090d; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <div class="container" style="max-width: 900px;">
+        <div style="margin-bottom: 3rem;">
+          <span class="eyebrow"><span class="dot"></span> [06] // FREQUENT INQUIRIES</span>
+          <h2 class="section-display-title" style="margin-top: 0.75rem;">
+            SYSTEM <span style="color: var(--emerald);">CLARIFICATIONS.</span>
+          </h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="studio-card" style="padding: 1.75rem 2rem;">
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Do I need prior coding experience to join the internship cohorts?</h4>
+            <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+              Not at all! Our training tracks are engineered progressively from ground zero. We start with foundational programming and advance into real-world architecture, suitable for both beginners and experienced coders.
+            </p>
+          </div>
+
+          <div class="studio-card" style="padding: 1.75rem 2rem;">
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">How much does a custom business website cost?</h4>
+            <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+              Pricing depends on scope, custom interactions, and backend complexity. We offer modular packages tailored for startups and local businesses. Connect directly on WhatsApp for an instant, transparent quote!
+            </p>
+          </div>
+
+          <div class="studio-card" style="padding: 1.75rem 2rem;">
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Do you provide full source code and documentation for college final year projects?</h4>
+            <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+              Yes, 100%. All custom academic projects include clean GitHub-ready source code, database schemas, architecture flowcharts, IEEE-formatted reports, and personalized viva defense preparation.
+            </p>
+          </div>
+
+          <div class="studio-card" style="padding: 1.75rem 2rem;">
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Are the internship completion certificates verified?</h4>
+            <p style="color: var(--paper-soft); font-size: 0.925rem; line-height: 1.6;">
+              Yes! Upon successful completion of your internship project, you receive a tamper-proof, verified certificate from JM Vertex Technologies with individual verification IDs and recommendation letters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [07] Direct Conversion Transmission Hub with Aligned Contact Cards -->
+    <section class="section-block">
+      <div class="container" style="max-width: 1100px;">
+        <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 2.5rem; align-items: stretch;">
+
+          <!-- Left Col: Perfectly Aligned Contact Cards -->
+          <div class="studio-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="eyebrow"><span class="dot"></span> DIRECT COMMISSIONS</span>
+              <h3 class="card-title" style="font-size: 1.6rem; margin: 0.75rem 0 1rem;">Direct Channels</h3>
+              <p style="color: var(--paper-mute); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;">
+                Connect directly with leadership or dispatch an inquiry to receive a response within 15 minutes.
+              </p>
+
+              <div class="contact-list-wrap">
+                <!-- Phone 1: Joshua J -->
+                <div class="contact-card-item">
+                  <div class="contact-icon-box">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  </div>
+                  <div class="contact-info">
+                    <strong class="contact-name">Joshua J (Founder)</strong>
+                    <a href="tel:+919092737477" class="contact-link">+91 90927 37477</a>
+                  </div>
+                </div>
+
+                <!-- Phone 2: Madhav Adithya S -->
+                <div class="contact-card-item">
+                  <div class="contact-icon-box">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  </div>
+                  <div class="contact-info">
+                    <strong class="contact-name">Madhav Adithya S (Co-Founder)</strong>
+                    <a href="tel:+919345699376" class="contact-link">+91 93456 99376</a>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card-item">
+                  <div class="contact-icon-box">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  </div>
+                  <div class="contact-info">
+                    <strong class="contact-name">Official Email</strong>
+                    <a href="mailto:jmvertextechnologies2025@gmail.com" class="contact-link">jmvertextechnologies2025@gmail.com</a>
+                  </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="contact-card-item">
+                  <div class="contact-icon-box whatsapp-icon">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  </div>
+                  <div class="contact-info">
+                    <strong class="contact-name">WhatsApp Business</strong>
+                    <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="contact-link" style="color: #25d366;">Chat with Engineering Team →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);">
+              <span class="tag-mono" style="font-size: 0.72rem;">📍 TAMIL NADU, INDIA • SERVING CLIENTS GLOBALLY</span>
+            </div>
+          </div>
+
+          <!-- Right Col: Transmission Form -->
+          <div class="studio-card" style="padding: 2.5rem; border-color: rgba(0, 255, 136, 0.4);">
+            <div style="margin-bottom: 2rem;">
+              <span class="tag-mono tag-emerald">INSTANT DISPATCH</span>
+              <h3 class="card-title" style="font-size: 1.8rem; margin: 0.5rem 0 0.25rem;">Initiate Your Project</h3>
+              <p style="color: var(--paper-mute); font-size: 0.875rem;">
+                Fill details below for an automated WhatsApp deep-link connection.
+              </p>
+            </div>
+
+            <form class="jm-inquiry-form">
+              <input type="text" name="b_fax_code" style="display:none;" tabindex="-1" autocomplete="off">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">FULL NAME *</label>
+                  <input type="text" name="name" class="input-glass" placeholder="e.g. Suriya" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">WHATSAPP PHONE *</label>
+                  <input type="tel" name="phone" class="input-glass" placeholder="+91 90927 37477" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">EMAIL ADDRESS *</label>
+                  <input type="email" name="email" class="input-glass" placeholder="name@domain.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">INTEREST AREA *</label>
+                  <select name="interest" class="input-glass" style="background:#090a0f;" required>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Final Year / Academic Project">Final Year / Academic Project</option>
+                    <option value="Internship &amp; Tech Training">Internship &amp; Tech Training</option>
+                    <option value="German Language Course">German Language Course</option>
+                    <option value="Japanese Language Course">Japanese Language Course</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">PROJECT SCOPE / OBJECTIVES *</label>
+                <textarea name="message" class="input-glass" placeholder="Tell us about your requirements, project timeline, or learning goals..." style="min-height: 100px;" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding-block: 1rem !important;" data-cursor-text="TRANSMIT">
+                Transmit Inquiry &amp; Open WhatsApp <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+      </div><!-- /.site-content -->
+
+  <!-- Studio Grade Cyber Footer -->
+  <footer class="site-footer" style="padding: 6rem 0 3rem; background: #020306; border-top: 1px solid var(--glass-border); position: relative; z-index: 2;">
+    <div class="container">
+      <!-- Monumental Footer CTA -->
+      <div style="margin-bottom: 5rem; padding-bottom: 4rem; border-bottom: 1px solid var(--glass-border);">
+        <span class="font-mono-tag">INITIATE NEXT CYCLE</span>
+        <h2 class="hero-display-title" style="margin: 1rem 0 2rem; font-size: clamp(2.5rem, 6vw, 5.5rem);">
+          LET'S BUILD SOMETHING <br>
+          <span class="font-editorial" style="color: var(--neon-emerald); font-style: italic;">extraordinary.</span>
+        </h2>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="contact.html" class="studio-btn studio-btn-primary" data-cursor-text="START">
+            Start a Project <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="https://wa.me/919092737477" target="_blank" rel="noopener noreferrer" class="studio-btn studio-btn-whatsapp" data-cursor-text="CHAT">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Direct WhatsApp Desk
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <a href="index.html" class="studio-brand" style="margin-bottom: 1.25rem;">
+            <div class="brand-glyph"><img src="assets/images/logo.png" alt="JM Vertex"></div>
+            <span class="brand-logo-text">JM VERTEX</span>
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; max-width: 320px; margin-bottom: 1.5rem;">
+            Digital production studio & advanced engineering academy. Specializing in high-performance web applications, IEEE research guidance, tech training, and foreign language fluency.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/jm-vertex-technologies/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.27a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/jm_vertex_technologies/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://github.com/jmvertex" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+            <a href="https://wa.me/919092737477" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Disciplines</h4>
+          <ul class="footer-links" style="font-family:var(--font-mono); font-size:0.8rem;">
+            <li><a href="website-development.html">01. Web Studio</a></li>
+            <li><a href="student-projects.html">02. Academic Research (IEEE)</a></li>
+            <li><a href="project-categories.html">03. Project Domains</a></li>
+            <li><a href="internship-training.html">04. Engineering Tracks</a></li>
+            <li><a href="portfolio.html">05. Selected Works</a></li>
+            <li><a href="blog.html">06. Technical Archive</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Specializations</h4>
+          <ul class="footer-links" style="font-family:var(--font-mono); font-size:0.8rem;">
+            <li><a href="python-training.html">Python & Automation</a></li>
+            <li><a href="full-stack-training.html">Full Stack MERN</a></li>
+            <li><a href="cloud-computing-training.html">AWS & Cloud DevOps</a></li>
+            <li><a href="ai-training.html">AI & Neural Networks</a></li>
+            <li><a href="cybersecurity-training.html">Cyber Defense & CEH</a></li>
+            <li><a href="german-language-course.html">German Language (A1-B2)</a></li>
+            <li><a href="japanese-language-course.html">Japanese (JLPT N5-N1)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Leadership Desk</h4>
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-family:var(--font-mono); font-size:0.8rem;">
+            <div>
+              <span style="color:#64748b; display:block;">FOUNDER:</span>
+              <strong style="color:#fff;">Joshua J</strong>
+              <a href="tel:+919092737477" style="color:var(--neon-emerald); display:block; text-decoration:none;">+91 90927 37477</a>
+            </div>
+            <div>
+              <span style="color:#64748b; display:block;">CO-FOUNDER:</span>
+              <strong style="color:#fff;">Madhav Adithya S</strong>
+              <a href="tel:+919345699376" style="color:var(--neon-emerald); display:block; text-decoration:none;">+91 93456 99376</a>
+            </div>
+            <div>
+              <span style="color:#64748b; display:block;">DISPATCH:</span>
+              <a href="mailto:jmvertextechnologies2025@gmail.com" style="color:var(--text-muted); text-decoration:none;">jmvertextechnologies2025@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="font-family:var(--font-mono); font-size:0.75rem;">
+        <p>© 2026 JM Vertex Technologies. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">PRIVACY</a>
+          <a href="terms.html" style="color: var(--text-dim); text-decoration: none;">TERMS</a>
+          <a href="contact.html" style="color: var(--text-dim); text-decoration: none;">COORDINATES</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Modals: Review Modal -->
+  <div id="review-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('review-modal')" aria-label="Close Modal"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <span class="font-mono-tag">FEEDBACK VERIFICATION</span>
+      <h3 class="heading-sm" style="margin: 0.5rem 0 1rem; font-size:1.6rem; color:#fff;">Submit Verified Review</h3>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">
+        Help future students and clients by sharing your experience with JM Vertex Technologies.
+      </p>
+
+      <form id="review-form">
+        <input type="text" name="b_fax_code" style="display:none;" tabindex="-1" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" class="input-glass" placeholder="e.g. Suriya" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">College / Company / Entity *</label>
+          <input type="text" name="entity" class="input-glass" placeholder="e.g. Sri Krishna College of Engineering" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Availed *</label>
+          <select name="service" class="input-glass" style="background:#0d1527;" required>
+            <option value="Website Development">Website Development</option>
+            <option value="Student Final Year Project">Student Final Year Project</option>
+            <option value="Tech Internship & Training">Tech Internship & Training</option>
+            <option value="German Language Course">German Language Course</option>
+            <option value="Japanese Language Course">Japanese Language Course</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Rating</label>
+          <div style="display: flex; gap: 0.5rem; color: #fbbf24; font-size: 1.4rem; cursor: pointer;">
+            ★★★★★
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Review / Feedback *</label>
+          <textarea name="feedback" class="input-glass" placeholder="Describe your experience with our mentorship, development speed, or results..." required></textarea>
+        </div>
+        <button type="submit" class="studio-btn studio-btn-primary" style="width: 100%;">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Universal Modals: Syllabus Download Modal -->
+  <div id="syllabus-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('syllabus-modal')" aria-label="Close Modal"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <span class="font-mono-tag">CURRICULUM SPECIFICATIONS</span>
+      <h3 class="heading-sm" id="syllabus-title" style="margin: 0.5rem 0 1rem; font-size:1.6rem; color:#fff;">Download Syllabus</h3>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">
+        Enter your details below to get the full week-by-week curriculum and project breakdown.
+      </p>
+
+      <form id="syllabus-form">
+        <input type="text" name="b_fax_code" style="display:none;" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="course_name" id="syllabus-course-input" value="Tech Training">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" name="name" class="input-glass" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" name="email" class="input-glass" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">WhatsApp Number *</label>
+          <input type="tel" name="phone" class="input-glass" placeholder="+91 98765 43210" required>
+        </div>
+        <button type="submit" class="studio-btn studio-btn-primary" style="width: 100%;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Download Syllabus Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modern Studio Script Stack -->
+  <script src="assets/js/studio-engine.js"></script>
+  <script src="assets/js/card3d.js"></script>
+  <script src="assets/js/security.js"></script>
+  <script src="assets/js/blog-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

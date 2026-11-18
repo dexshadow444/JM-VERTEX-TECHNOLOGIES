@@ -1,0 +1,1166 @@
+/* ============================================================================
+   JM VERTEX TECHNOLOGIES — Master Engineering Studio Design System
+   Architecture: Dark Swiss Precision & Tactile Editorial Engineering
+   Palette: Deep Charcoal Obsidian Ground (#07080B), Paper Ivory (#F4F5F8),
+            Cyber Emerald (#00FF88) & Electric Cyan (#00F0FF) Accents.
+   Zero Glassmorphism: Crisp 1px hairlines, solid matte surfaces, high legibility.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap');
+
+/* ---------- 1. Design Tokens -------------------------------------------- */
+:root {
+  /* Surfaces & Foundation */
+  --bg-abyss:     #050608;
+  --bg-deep:      #08090d;
+  --bg-surface:   #10121a;
+  --bg-card:      #151824;
+  --bg-elevated:  #1b1f2e;
+  --bg-highlight: #23283b;
+
+  /* Crisp Architectural Borders */
+  --rule:         rgba(255, 255, 255, 0.08);
+  --rule-soft:    rgba(255, 255, 255, 0.04);
+  --rule-strong:  rgba(255, 255, 255, 0.16);
+  --rule-emerald: rgba(0, 255, 136, 0.45);
+  --rule-cyan:    rgba(0, 240, 255, 0.45);
+
+  /* Typography Colors */
+  --paper:        #f4f5f8;
+  --paper-soft:   #c5cad8;
+  --paper-mute:   #7d859b;
+  --paper-deep:   #4b5266;
+
+  /* Signature Accents */
+  --emerald:       #00ff88;
+  --emerald-main:  #10b981;
+  --emerald-glow:  rgba(0, 255, 136, 0.18);
+  --cyan:          #00f0ff;
+  --cyan-glow:     rgba(0, 240, 255, 0.18);
+  --whatsapp:      #25d366;
+  --whatsapp-hover:#2ef077;
+
+  /* Fonts */
+  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-serif:   'Playfair Display', serif;
+  --font-body:    'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Container Sizing */
+  --container-max: 1340px;
+  --container-wide: 1480px;
+  --gutter: clamp(1.25rem, 2.5vw, 2.5rem);
+
+  /* Curves & Animation */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast:    180ms;
+  --dur-base:    320ms;
+}
+
+/* ---------- 2. Reset & Document Defaults -------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-deep);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--paper);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--emerald);
+  color: #000000;
+}
+
+:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Subtle Architectural Grid Pattern (Non-intrusive) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fluid Canvas */
+#cyber-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* Site Content Container wrapper */
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 3. Layout Utilities ----------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.section-block {
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  position: relative;
+}
+
+.section-block-sm {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---------- 4. Typography System ---------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--emerald);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--emerald);
+}
+
+.hero-display-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.section-display-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.section-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--paper-soft);
+  max-width: 680px;
+}
+
+.tag-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+  background: #151824;
+  border: 1px solid var(--rule);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tag-emerald {
+  color: var(--emerald);
+  border-color: rgba(0, 255, 136, 0.3);
+  background: rgba(0, 255, 136, 0.06);
+}
+
+.tag-cyan {
+  color: var(--cyan);
+  border-color: rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.06);
+}
+
+/* ---------- 5. Solid Studio Buttons ------------------------------------- */
+.studio-btn, .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  padding: 0.9rem 1.85rem !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  border: 1px solid transparent !important;
+  text-decoration: none !important;
+  transition: all var(--dur-fast) var(--ease-out) !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+/* Primary Button: Solid Emerald with Deep Black Text */
+.studio-btn-primary, .btn-primary {
+  background: var(--emerald) !important;
+  color: #050608 !important;
+  border-color: var(--emerald) !important;
+  box-shadow: 0 4px 18px rgba(0, 255, 136, 0.3) !important;
+}
+
+.studio-btn-primary:hover, .btn-primary:hover {
+  background: #33ff9f !important;
+  border-color: #33ff9f !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5) !important;
+}
+
+.studio-btn-primary svg, .btn-primary svg {
+  transition: transform var(--dur-fast) var(--ease-out) !important;
+}
+
+.studio-btn-primary:hover svg, .btn-primary:hover svg {
+  transform: translateX(4px) !important;
+}
+
+/* Ghost / Secondary Button: Solid Dark Surface with Hairline Rule */
+.studio-btn-ghost, .btn-secondary, .btn-ghost {
+  background: var(--bg-surface) !important;
+  color: var(--paper) !important;
+  border-color: var(--rule-strong) !important;
+}
+
+.studio-btn-ghost:hover, .btn-secondary:hover, .btn-ghost:hover {
+  background: var(--bg-card) !important;
+  border-color: var(--emerald) !important;
+  color: var(--emerald) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Neon Accent Button */
+.studio-btn-neon, .btn-outline-emerald {
+  background: rgba(0, 255, 136, 0.08) !important;
+  color: var(--emerald) !important;
+  border-color: rgba(0, 255, 136, 0.35) !important;
+}
+
+.studio-btn-neon:hover, .btn-outline-emerald:hover {
+  background: var(--emerald) !important;
+  color: #000000 !important;
+  border-color: var(--emerald) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 25px var(--emerald-glow) !important;
+}
+
+/* WhatsApp Direct CTA Button */
+.studio-btn-whatsapp, .btn-whatsapp {
+  background: var(--whatsapp) !important;
+  color: #000000 !important;
+  border-color: var(--whatsapp) !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3) !important;
+}
+
+.studio-btn-whatsapp:hover, .btn-whatsapp:hover {
+  background: var(--whatsapp-hover) !important;
+  border-color: var(--whatsapp-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5) !important;
+}
+
+.btn-sm {
+  padding: 0.6rem 1.25rem !important;
+  font-size: 0.725rem !important;
+}
+
+/* ---------- 6. Architectural Header & Navigation ----------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 9, 13, 0.95);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 0.85rem;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.studio-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.brand-glyph {
+  width: 42px;
+  height: 42px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  overflow: hidden;
+  transition: border-color var(--dur-fast);
+}
+
+.studio-brand:hover .brand-glyph {
+  border-color: var(--emerald);
+}
+
+.brand-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.brand-status-dot {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--paper-mute);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 3px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--emerald);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px var(--emerald);
+}
+
+/* Navigation Links */
+.nav-desktop-container {
+  display: block;
+}
+
+.nav-links-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+  padding-block: 0.35rem;
+  position: relative;
+  transition: color var(--dur-fast);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.active {
+  color: var(--emerald);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--emerald);
+  box-shadow: 0 0 8px var(--emerald);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  color: #ffffff;
+  padding: 0.4rem;
+}
+
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-abyss);
+  z-index: 999;
+  padding: 2.5rem 1.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.mobile-drawer.open {
+  display: flex;
+}
+
+/* ---------- 7. Solid Architecture Cards & Bento Grid ------------------- */
+.studio-card, .studio-glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 2.25rem;
+  position: relative;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.studio-card:hover, .studio-glass-card:hover {
+  border-color: var(--rule-emerald);
+  background: var(--bg-card);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px var(--emerald-glow);
+}
+
+.studio-card-elevated {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-strong);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+/* Bento Layouts */
+.bento-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Numbered Discipline Rows */
+.discipline-row {
+  display: grid;
+  grid-template-columns: 80px 1.4fr 1.2fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.discipline-row:hover {
+  border-color: var(--rule-emerald);
+  background: var(--bg-card);
+  transform: translateY(-2px);
+}
+
+.discipline-num {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--emerald);
+  line-height: 1;
+}
+
+/* ---------- 8. Stat Cards (Exact Verified Match) ----------------------- */
+.stat-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-block: 2.5rem;
+}
+
+.stat-card-box {
+  background: #0d1322;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  transition: all var(--dur-fast) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-box:hover {
+  border-color: rgba(0, 255, 136, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7);
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  font-weight: 700;
+  color: #14e4c5;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.stat-card-label {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+  display: block;
+}
+
+/* Backward compatibility for stat-strip */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-block: 2rem;
+}
+
+.stat-cell {
+  background: #0d1322;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.stat-cell:hover {
+  border-color: rgba(0, 255, 136, 0.35);
+  transform: translateY(-3px);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.2vw, 3.2rem);
+  font-weight: 800;
+  color: var(--emerald);
+  line-height: 1;
+  margin-bottom: 0.65rem;
+  display: block;
+}
+
+.stat-num-emerald { color: var(--emerald); }
+.stat-num-cyan { color: var(--cyan); }
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- 9. Continuous Marquee Ribbon -------------------------------- */
+.marquee-ribbon-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: #080a0e;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+  white-space: nowrap;
+}
+
+.marquee-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 8px var(--emerald);
+  display: inline-block;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- 10. Interactive Project Strip (Selected Works) -------------- */
+.project-strip-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--paper);
+  transition: all var(--dur-fast) var(--ease-out);
+  border-radius: 8px;
+}
+
+.project-strip-item:hover {
+  background: var(--bg-surface);
+  border-bottom-color: var(--rule-emerald);
+  padding-inline: 2rem;
+}
+
+.project-strip-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.project-strip-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper-soft);
+  transition: all var(--dur-fast);
+}
+
+.project-strip-item:hover .project-strip-arrow {
+  background: var(--emerald);
+  color: #000000;
+  border-color: var(--emerald);
+  transform: rotate(-45deg);
+}
+
+/* ---------- 11. Solid Engineering Forms --------------------------------- */
+.input-glass, .form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: #090a0f !important;
+  border: 1px solid var(--rule-strong) !important;
+  border-radius: 8px !important;
+  padding: 0.9rem 1.25rem !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.925rem !important;
+  transition: border-color var(--dur-fast), outline var(--dur-fast) !important;
+}
+
+.input-glass:focus, .form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--emerald) !important;
+  outline: 2px solid rgba(0, 255, 136, 0.25) !important;
+  outline-offset: 1px !important;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--paper-mute);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 12. Modals (Clean Solid Overlays) --------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 6, 8, 0.88);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background: #0f1118;
+  border: 1px solid var(--rule-strong);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 580px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--paper-mute);
+  transition: color var(--dur-fast);
+}
+
+.modal-close:hover {
+  color: #ffffff;
+}
+
+/* ---------- Contact Cards & Precision Aligned Icons ------------------- */
+.contact-list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.contact-card-item {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 1rem 1.25rem;
+  background: #0d101a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+
+.contact-card-item:hover {
+  border-color: rgba(0, 255, 136, 0.4);
+  background: #121624;
+  transform: translateX(4px);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  background: #161b2a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+  transition: all var(--dur-fast);
+  line-height: 1;
+}
+
+.contact-icon-box svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.contact-card-item:hover .contact-icon-box {
+  color: var(--emerald);
+  border-color: var(--emerald);
+  background: rgba(0, 255, 136, 0.12);
+}
+
+.contact-icon-box.whatsapp-icon {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.35);
+  background: rgba(37, 211, 102, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.contact-name {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contact-link {
+  color: var(--emerald);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color var(--dur-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+}
+
+/* Backward compatibility for feature-icon-box */
+.feature-icon-box {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: #161b2a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+  line-height: 1;
+}
+
+.feature-icon-box svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ---------- Showcase Work Cards (Browser Frame & Live Links) ---------- */
+.work-browser-card {
+  background: #0f121d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all var(--dur-base) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+
+.work-browser-card:hover {
+  border-color: rgba(0, 255, 136, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 255, 136, 0.15);
+}
+
+.work-browser-header {
+  background: #090b12;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.work-browser-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.work-browser-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.work-browser-dot:nth-child(1) { background: #ef4444; }
+.work-browser-dot:nth-child(2) { background: #eab308; }
+.work-browser-dot:nth-child(3) { background: #22c55e; }
+
+.work-browser-url {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.work-preview-img-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: #0a0c14;
+}
+
+.work-preview-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.work-browser-card:hover .work-preview-img-wrap img {
+  transform: scale(1.06);
+}
+
+.work-badge-live {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  color: var(--emerald);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.work-content-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.work-metric-chip {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  color: var(--emerald);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+/* ---------- 13. High-End Studio Footer ---------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: #07080b;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-heading {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--paper-mute);
+}
+
+.footer-links a:hover {
+  color: var(--emerald);
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper-soft);
+  transition: all var(--dur-fast);
+}
+
+.social-btn:hover {
+  background: var(--emerald);
+  color: #000000;
+  border-color: var(--emerald);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  color: var(--paper-deep);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* ---------- 14. Responsive Breakpoints ---------------------------------- */
+@media (max-width: 1024px) {
+  .nav-desktop-container {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .bento-grid-3, .bento-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .discipline-row {
+    grid-template-columns: 60px 1fr;
+  }
+  .discipline-row > div:nth-child(3) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .stat-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bento-grid-2, .bento-grid-3, .bento-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}

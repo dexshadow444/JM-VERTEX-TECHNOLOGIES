@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/JM_Logo_transparent.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JM Vertex Technologies | Web Development, Custom Projects & Tech Training</title>
+    <meta name="description" content="JM Vertex Technologies offers professional website development, custom project building for college students, tech training & internships, and German language classes. Based in India, serving clients and students nationwide." />
+    <meta name="keywords" content="JM Vertex Technologies, JM Vertex, JM Technologies, web development company, custom project building, tech internship, German language classes" />
+    <link rel="canonical" href="https://jmvertextechnologies.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JM Vertex Technologies" />
+    <meta property="og:description" content="Professional website development, custom project building, tech training, internships, and German language classes." />
+    <meta property="og:url" content="https://jmvertextechnologies.com/" />
+    <meta property="og:image" content="https://jmvertextechnologies.com/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JM Vertex Technologies" />
+    <meta name="twitter:description" content="Professional website development, custom project building, tech training, internships, and German language classes." />
+    <meta name="twitter:image" content="https://jmvertextechnologies.com/logo.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JM Vertex Technologies",
+      "url": "https://jmvertextechnologies.com/",
+      "logo": "https://jmvertextechnologies.com/logo.png",
+      "email": "jmvertextechnologies2025@gmail.com",
+      "sameAs": [
+        "https://twitter.com/jmtechtex",
+        "https://www.linkedin.com/company/YOUR-LINKEDIN-SLUG",
+        "https://www.instagram.com/YOUR-INSTAGRAM-HANDLE"
+      ],
+      "description": "JM Vertex Technologies offers website development, custom project building for students, tech training and internships, and German language classes."
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-Cy_BWS3q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-KOP-xmJ0.css">
+  </head>
+  <body>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form hidden method='post' name='jmvertex-contact'><input type='hidden' name='form-name' value='jmvertex-contact' />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <select name="interest"></select>
+      <textarea name="message"></textarea>
+    </form>
+    <div id="root"></div>
+  </body>
+</html>

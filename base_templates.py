@@ -1,0 +1,329 @@
+import html
+
+# Common Classy SVG Icons
+ICONS = {
+    "arrow_right": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>',
+    "check": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>',
+    "code": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
+    "cpu": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>',
+    "server": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>',
+    "globe": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>',
+    "shield": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    "brain": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-5.04zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-5.04z"/></svg>',
+    "book": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>',
+    "grad": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>',
+    "database": '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M21 19c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+    "phone": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>',
+    "mail": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+    "whatsapp": '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>',
+    "star": '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>',
+    "download": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>',
+    "close": '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>'
+}
+
+def render_head(title, description, canonical_path=""):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(description)}">
+  <link rel="canonical" href="https://jmvertextechnologies.com/{canonical_path}">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Fonts Preload & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Engineering Studio Stylesheet (Zero Glassmorphism) -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- Precision Architectural Progress Bar -->
+  <div id="top-progress-bar" style="position:fixed; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg, #00ff88, #00f0ff); z-index:999999; transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease, opacity 0.3s ease;"></div>
+
+  <!-- Interactive Cyber Canvas -->
+  <canvas id="cyber-canvas"></canvas>
+
+  <!-- Project Hover Preview -->
+  <div class="project-hover-preview" id="project-hover-preview" style="position:fixed; pointer-events:none; width:340px; height:220px; border-radius:12px; overflow:hidden; z-index:9999; opacity:0; transform:translate(-50%, -50%) scale(0.9); transition:opacity 0.25s ease, transform 0.25s ease; border:1px solid rgba(0,255,136,0.4); box-shadow:0 20px 50px rgba(0,0,0,0.8);">
+    <img id="project-hover-img" src="assets/images/logo.png" alt="Project Preview" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+"""
+
+def render_header(active_page=""):
+    return f"""  <!-- Studio Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="studio-brand">
+        <div class="brand-glyph">
+          <img src="assets/images/logo.png" alt="JM Vertex">
+        </div>
+        <div class="brand-label">
+          <span class="brand-logo-text">JM VERTEX</span>
+          <div class="brand-status-dot">
+            <span class="live-dot"></span> STUDIO • LABS • 2026
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop-container">
+        <ul class="nav-links-wrap">
+          <li><a href="index.html" class="nav-link {'active' if active_page == 'home' else ''}">Index</a></li>
+          <li><a href="website-development.html" class="nav-link {'active' if active_page == 'webdev' else ''}">Web Studio</a></li>
+          <li><a href="student-projects.html" class="nav-link {'active' if active_page == 'projects' else ''}">Academic Projects</a></li>
+          <li><a href="internship-training.html" class="nav-link {'active' if 'training' in active_page else ''}">Engineering Tracks</a></li>
+          <li><a href="german-language-course.html" class="nav-link {'active' if 'lang' in active_page else ''}">Languages</a></li>
+          <li><a href="portfolio.html" class="nav-link {'active' if active_page == 'portfolio' else ''}">Works</a></li>
+          <li><a href="blog.html" class="nav-link {'active' if active_page == 'blog' else ''}">Publications</a></li>
+          <li><a href="contact.html" class="nav-link {'active' if active_page == 'contact' else ''}">Connect</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Side Actions & Contact -->
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <a href="tel:+919092737477" class="tag-mono" style="text-decoration:none; display:none; @media (min-width: 1200px) {{ display: inline-flex; }}">
+          {ICONS['phone']} +91 90927 37477
+        </a>
+
+        <a href="https://wa.me/919092737477?text=Hi%20JM%20Vertex%20Technologies,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          {ICONS['whatsapp']} Quick Chat
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle Mobile Menu" onclick="toggleMobileMenu()">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <a href="index.html" class="studio-brand" style="margin-bottom: 1.5rem;">
+        <div class="brand-glyph"><img src="assets/images/logo.png" alt="JM Vertex"></div>
+        <span class="brand-logo-text">JM VERTEX</span>
+      </a>
+      <a href="index.html" class="mobile-link" style="color:#fff; text-decoration:none; font-family:var(--font-display); font-size:1.4rem; font-weight:800;">INDEX</a>
+      <a href="website-development.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[01] WEB STUDIO</a>
+      <a href="student-projects.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[02] ACADEMIC PROJECTS (IEEE)</a>
+      <a href="internship-training.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[03] TECH TRAINING TRACKS</a>
+      <a href="german-language-course.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[04] GERMAN (A1 - B2)</a>
+      <a href="japanese-language-course.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[05] JAPANESE (JLPT N5-N1)</a>
+      <a href="portfolio.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[06] PRODUCTION WORKS</a>
+      <a href="blog.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[07] 20 PUBLICATIONS</a>
+      <a href="contact.html" class="mobile-link" style="color:#94a3b8; text-decoration:none; font-family:var(--font-mono); font-size:0.95rem;">[08] CONNECT</a>
+
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+        <p style="color:#64748b; font-size:0.8rem; font-family:var(--font-mono); margin-bottom: 0.75rem;">DIRECT FOUNDER CONNECT:</p>
+        <a href="tel:+919092737477" class="studio-btn studio-btn-neon" style="width:100%; margin-bottom:0.5rem; font-size:0.75rem;">+91 90927 37477</a>
+        <a href="https://wa.me/919092737477" class="studio-btn studio-btn-whatsapp" style="width:100%; font-size:0.75rem;">WhatsApp Direct</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-content">
+"""
+
+def render_footer():
+    return f"""  </div><!-- /.site-content -->
+
+  <!-- Studio Grade Cyber Footer -->
+  <footer class="site-footer" style="padding: 6rem 0 3rem; background: #020306; border-top: 1px solid var(--glass-border); position: relative; z-index: 2;">
+    <div class="container">
+      <!-- Monumental Footer CTA -->
+      <div style="margin-bottom: 5rem; padding-bottom: 4rem; border-bottom: 1px solid var(--glass-border);">
+        <span class="font-mono-tag">INITIATE NEXT CYCLE</span>
+        <h2 class="hero-display-title" style="margin: 1rem 0 2rem; font-size: clamp(2.5rem, 6vw, 5.5rem);">
+          LET'S BUILD SOMETHING <br>
+          <span class="font-editorial" style="color: var(--neon-emerald); font-style: italic;">extraordinary.</span>
+        </h2>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="contact.html" class="studio-btn studio-btn-primary" data-cursor-text="START">
+            Start a Project {ICONS['arrow_right']}
+          </a>
+          <a href="https://wa.me/919092737477" target="_blank" rel="noopener noreferrer" class="studio-btn studio-btn-whatsapp" data-cursor-text="CHAT">
+            {ICONS['whatsapp']} Direct WhatsApp Desk
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <a href="index.html" class="studio-brand" style="margin-bottom: 1.25rem;">
+            <div class="brand-glyph"><img src="assets/images/logo.png" alt="JM Vertex"></div>
+            <span class="brand-logo-text">JM VERTEX</span>
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; max-width: 320px; margin-bottom: 1.5rem;">
+            Digital production studio & advanced engineering academy. Specializing in high-performance web applications, IEEE research guidance, tech training, and foreign language fluency.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/jm-vertex-technologies/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.27a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/jm_vertex_technologies/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://github.com/jmvertex" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+            <a href="https://wa.me/919092737477" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+              {ICONS['whatsapp']}
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Disciplines</h4>
+          <ul class="footer-links" style="font-family:var(--font-mono); font-size:0.8rem;">
+            <li><a href="website-development.html">01. Web Studio</a></li>
+            <li><a href="student-projects.html">02. Academic Research (IEEE)</a></li>
+            <li><a href="project-categories.html">03. Project Domains</a></li>
+            <li><a href="internship-training.html">04. Engineering Tracks</a></li>
+            <li><a href="portfolio.html">05. Selected Works</a></li>
+            <li><a href="blog.html">06. Technical Archive</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Specializations</h4>
+          <ul class="footer-links" style="font-family:var(--font-mono); font-size:0.8rem;">
+            <li><a href="python-training.html">Python & Automation</a></li>
+            <li><a href="full-stack-training.html">Full Stack MERN</a></li>
+            <li><a href="cloud-computing-training.html">AWS & Cloud DevOps</a></li>
+            <li><a href="ai-training.html">AI & Neural Networks</a></li>
+            <li><a href="cybersecurity-training.html">Cyber Defense & CEH</a></li>
+            <li><a href="german-language-course.html">German Language (A1-B2)</a></li>
+            <li><a href="japanese-language-course.html">Japanese (JLPT N5-N1)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff;">Leadership Desk</h4>
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-family:var(--font-mono); font-size:0.8rem;">
+            <div>
+              <span style="color:#64748b; display:block;">FOUNDER:</span>
+              <strong style="color:#fff;">Joshua J</strong>
+              <a href="tel:+919092737477" style="color:var(--neon-emerald); display:block; text-decoration:none;">+91 90927 37477</a>
+            </div>
+            <div>
+              <span style="color:#64748b; display:block;">CO-FOUNDER:</span>
+              <strong style="color:#fff;">Madhav Adithya S</strong>
+              <a href="tel:+919345699376" style="color:var(--neon-emerald); display:block; text-decoration:none;">+91 93456 99376</a>
+            </div>
+            <div>
+              <span style="color:#64748b; display:block;">DISPATCH:</span>
+              <a href="mailto:jmvertextechnologies2025@gmail.com" style="color:var(--text-muted); text-decoration:none;">jmvertextechnologies2025@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="font-family:var(--font-mono); font-size:0.75rem;">
+        <p>© 2026 JM Vertex Technologies. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">PRIVACY</a>
+          <a href="terms.html" style="color: var(--text-dim); text-decoration: none;">TERMS</a>
+          <a href="contact.html" style="color: var(--text-dim); text-decoration: none;">COORDINATES</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Modals: Review Modal -->
+  <div id="review-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('review-modal')" aria-label="Close Modal">{ICONS['close']}</button>
+      <span class="font-mono-tag">FEEDBACK VERIFICATION</span>
+      <h3 class="heading-sm" style="margin: 0.5rem 0 1rem; font-size:1.6rem; color:#fff;">Submit Verified Review</h3>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">
+        Help future students and clients by sharing your experience with JM Vertex Technologies.
+      </p>
+
+      <form id="review-form">
+        <input type="text" name="b_fax_code" style="display:none;" tabindex="-1" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" class="input-glass" placeholder="e.g. Suriya" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">College / Company / Entity *</label>
+          <input type="text" name="entity" class="input-glass" placeholder="e.g. Sri Krishna College of Engineering" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Availed *</label>
+          <select name="service" class="input-glass" style="background:#0d1527;" required>
+            <option value="Website Development">Website Development</option>
+            <option value="Student Final Year Project">Student Final Year Project</option>
+            <option value="Tech Internship & Training">Tech Internship & Training</option>
+            <option value="German Language Course">German Language Course</option>
+            <option value="Japanese Language Course">Japanese Language Course</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Rating</label>
+          <div style="display: flex; gap: 0.5rem; color: #fbbf24; font-size: 1.4rem; cursor: pointer;">
+            ★★★★★
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Review / Feedback *</label>
+          <textarea name="feedback" class="input-glass" placeholder="Describe your experience with our mentorship, development speed, or results..." required></textarea>
+        </div>
+        <button type="submit" class="studio-btn studio-btn-primary" style="width: 100%;">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Universal Modals: Syllabus Download Modal -->
+  <div id="syllabus-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('syllabus-modal')" aria-label="Close Modal">{ICONS['close']}</button>
+      <span class="font-mono-tag">CURRICULUM SPECIFICATIONS</span>
+      <h3 class="heading-sm" id="syllabus-title" style="margin: 0.5rem 0 1rem; font-size:1.6rem; color:#fff;">Download Syllabus</h3>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">
+        Enter your details below to get the full week-by-week curriculum and project breakdown.
+      </p>
+
+      <form id="syllabus-form">
+        <input type="text" name="b_fax_code" style="display:none;" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="course_name" id="syllabus-course-input" value="Tech Training">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" name="name" class="input-glass" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" name="email" class="input-glass" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">WhatsApp Number *</label>
+          <input type="tel" name="phone" class="input-glass" placeholder="+91 98765 43210" required>
+        </div>
+        <button type="submit" class="studio-btn studio-btn-primary" style="width: 100%;">{ICONS['download']} Download Syllabus Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modern Studio Script Stack -->
+  <script src="assets/js/studio-engine.js"></script>
+  <script src="assets/js/card3d.js"></script>
+  <script src="assets/js/security.js"></script>
+  <script src="assets/js/blog-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+"""
